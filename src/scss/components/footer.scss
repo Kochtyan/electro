@@ -2,7 +2,7 @@
   &__container {
     padding-top: 50px;
     padding-bottom: 66px;
-    background: $redColor;
+    background: $red;
     max-width: 100%;  
 
   }
@@ -23,7 +23,6 @@
 		display: flex;
 		flex-direction: column;
 		margin-left: 90px;
-		color:$whiteColor;
 	}
 
   &__text {
@@ -32,7 +31,6 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color:$whiteColor;
     padding-bottom: 20px;
   }
 }

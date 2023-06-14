@@ -1,10 +1,10 @@
 $maxWidth: 1920; // максимальная ширина страницы
 $minWidth: 320; // минимальная ширина телефона
-$maxWidthContainer: 1200; // ширина контейнера с учетом padding слева и справа
-$containerWidth: 1160; // ширина контейнера из макета
+$maxWidthContainer: 1400; // ширина контейнера с учетом padding слева и справа
+$containerWidth: 1360; // ширина контейнера из макета
 
 $mainOffset: 15; // отступы безопасности для контейнера
-$mainFont: ''; // !указать здесь основное семейство шрифта
+$mainFont: 'Montserrat'; // !указать здесь основное семейство шрифта
 $mainWeight: 400; // !указать здесь основное начертание шрифта
 
 $headerHeight: 100;
@@ -12,16 +12,13 @@ $footerHeight: 100;
 
 $mainRadius: rem(10);
 
-$whiteColor: #fff;
-$blackColor: #131313;
-$grayColor: #969696;
-$redColor: #CC2232;
-
-$firstAccentColor: $blackColor;
-$secondAccentColor: $redColor;
+$white: #fff;
+$black: #131313;
+$gray: #969696;
+$red: #CC2232;
 
 $fontFamily: $mainFont, sans-serif; // Семейство шрифта по умолчанию
-$fontColor: $blackColor; // Цвет шрифта по умолчанию
+$fontColor: $white; // Цвет шрифта по умолчанию
 $fontSize: 16; // Размер шрифта по умолчанию
 $fontWeight: $mainWeight; // Жирность шрифта по умолчанию
 

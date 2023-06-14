@@ -1,55 +1,25 @@
 .header {
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 24px;
-  margin-top: 37px;
-
-  &__container {
-    max-width: 1920px;
-  }
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .menu {
-	&__list {
-		text-align: center;
-	}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	&__item {
-		display: inline-block;
-		margin-left: 32px;
-	}
+  &__list {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+  }
 
   &__link {
-    color:$whiteColor;
-  }
-
-	&__btn {
-		background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
-		padding: 20px 50px;
-		text-align: right;
-		margin-left: 171px;
-		color:#FFFFFF;
-	}
-
-  &__logo {
-    padding-top: 9px;
-    margin-right: 273px;
-  }
-}
-
-.btn__arrow {
-  margin: 2px 0 0 10px;
-}
-
-.banner {
-  position: relative;
-  z-index: -1;
-
-  &__logo {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    text-decoration: none;
   }
 }

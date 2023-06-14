@@ -1,1 +1,24 @@
-// Заголовки, общие БЄМ блоки и проче...
+// Заголовки, общие БЄМ блоки и прочее...
+
+.accent-button {
+  display: flex;
+  gap: 20px;
+  padding: 20px 50px;
+
+  background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
+  color:#FFFFFF;
+  
+  text-align: right;
+  text-decoration: none;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $gray;
+  border: 1px solid $gray;
+  padding: 20px 15px;
+  font-size: 16px;
+  text-decoration: none;
+}

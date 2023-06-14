@@ -1,0 +1,31 @@
+.hero {
+    min-height: 100vh;
+    background: url('../images/banner.png') no-repeat 50% 50%;
+    background-size: cover;
+    display: flex;
+    align-items: stretch;
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        text-align: center;
+    }
+    &__logo {
+        margin-right: 20px;
+    }
+    &__text {
+        font-weight: bold;
+        font-size: 80px;
+        line-height: 98px;
+        color: #FFFFFF;
+    }
+    &__button {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 340px;
+
+    }
+}

@@ -62,3 +62,17 @@ isWebp();
 // togglePopupWindows();
 
 // const tabs = new Tabs('default-tabs', {});
+
+const scrollLink = document.getElementById('scroll-link');
+const scrollElement = document.getElementById('scroll-element');
+
+  scrollLink.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const elementTop = scrollElement.getBoundingClientRect().top + window.pageYOffset;
+
+    window.scrollTo({
+      top: elementTop,
+      behavior: 'smooth'
+    });
+  });

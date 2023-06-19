@@ -1,13 +1,10 @@
 .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: stretch;
     background: $black;
     position: relative;
+    padding: 100px 0;
+    height: 100vh;
+    min-width: 100vw;
     &__container {
-        display: flex;
-        align-items: center;
-        padding-top: 100px;
         position: relative;
         z-index: 4;
     }
@@ -15,34 +12,38 @@
         font-size: 32px;
         line-height: 38px;
         font-weight: 500;
-        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
+    &__paragraph {
+        display: block;
+        margin-top: 30px;
     }
     &__text {
         font-size: 24px;
-        line-height: 29px;
+        line-height: 30px;
+
+        flex-basis: 650px;
     }
     &__name {
+        font-size: 24px;
         color: $red;
+        &_big {
+            font-size: 32px;
+        }
+    }
+    &__subtitle {
+        font-size: 24px;
+        color: $red;
+
+        display: block;
+        max-width: 400px;
     }
     &__row {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        //column-gap: 50px;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
       }
     &__image {
-        width: 820px;
-        height: 1000px;
         object-fit: contain;
-        transform: rotate(2.4deg);
-    }
-    &__imagecontainer {
-        position: relative;
-        display:flex;
-        margin-top: -50px;
-        padding-bottom: 15px;
-        margin-right: -100px;
-        z-index: 3;
     }
     &__lines {
         position: absolute;
@@ -62,6 +63,4 @@
         z-index: 3;
     }
 
-}
-.container {
 }

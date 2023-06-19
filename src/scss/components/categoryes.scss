@@ -1,6 +1,8 @@
 .categoryes {
     margin-top: 100px;
     margin-bottom: 100px;
+    min-width: 100vw;
+    background-color: $white;
     &__card {
         margin-top: 140px;
     }

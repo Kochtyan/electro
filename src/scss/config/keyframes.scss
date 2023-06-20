@@ -5,3 +5,15 @@
     top: 0;
   }
 }
+
+@keyframes gleam {
+  from {
+    left: -50px;
+  }
+  5% {
+    left: 120%;
+  }
+  to {
+    left: 120%;
+  }
+}

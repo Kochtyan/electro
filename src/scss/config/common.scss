@@ -1,17 +1,5 @@
 // Заголовки, общие БЄМ блоки и прочее...
 
-.accent-button {
-  display: flex;
-  gap: 20px;
-  padding: 20px 50px;
-
-  background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
-  color:#FFFFFF;
-  
-  text-align: right;
-  text-decoration: none;
-}
-
 .button {
   display: flex;
   justify-content: space-between;
@@ -23,8 +11,44 @@
   text-decoration: none;
   width: fit-content;
   gap: 10px;
+  transition: .3s;
+  &:hover {
+    background-color: $gray;  
+    color: $white; 
+    gap: 40px;
+    .button__arrow {
+      transform: translateX(-10px);
+      & path {
+        stroke: $white;
+      }
+    }
+  }
   &__arrow {
     display: flex;
+    transition: .3s;
+  }
+  &_accent {
+    background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
+    color:#FFFFFF;
+    border: none;
+
+    text-decoration: none;
+
+    
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 100%;
+      transform: skewX(-20deg);
+      opacity: .5;
+      background-color: $white;
+      transition: .3s;
+      animation: gleam 5s linear infinite;
+    }
   }
 }
 
@@ -39,4 +63,6 @@
 
 .anim {
   display: flex;
+  height: 100vh;
 }
+

@@ -1,10 +1,31 @@
-.categoryes {
-    margin-top: 100px;
-    margin-bottom: 100px;
+.category {
+    padding: 100px 0;
     min-width: 100vw;
+    height: 200vh;
     background-color: $white;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex-grow: 1;
+        position: relative;
+    }
+
+    display: flex;
+    align-items: center;
     &__card {
         margin-top: 140px;
+    }
+    &_black {
+        background-color: $black;
+    }
+    &__title {
+        position: absolute;
+        top: -200px;
+        left: 0;
     }
 }
 .container {

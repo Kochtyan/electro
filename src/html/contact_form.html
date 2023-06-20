@@ -1,0 +1,24 @@
+<div class="overlay" id="popup">
+    <div class="contact_form container">
+        <form>
+            <a href="#" onclick="closePopup()" class="contact_form__close">&times;</a>
+            <h3>Связаться с нами</h3>
+            <input type="text" id="fio" placeholder="ФИО" required>
+            <input type="tel" id="phone" placeholder="Телефон" required>
+            <input type="email" id="email" placeholder="Почта" required>
+            <input type="text" id="message" placeholder="Комментарий">
+            <button type="submit" class="button button_accent">
+                <span class="accent-button__text">Связаться</span>
+                <div class="accent-button__arrow">
+                @@include('../images/arrow_up.svg')
+                </div>
+            </button>
+            <div class="contact_form__subtext">
+                <p>
+                    office@dcktool.ru<br>
+                    Телефона 8 800 550 85 00
+                </p>
+            </div>
+        </form>
+    </div>
+</div>

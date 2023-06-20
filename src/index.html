@@ -3,7 +3,7 @@
   @@include('html/head.html', {
     'title': 'DCK Электротовары'
   })
-  <body>
+  <body >
     @@include('html/header.html', {})
     <main class="page">
       <div class="anim">
@@ -12,8 +12,23 @@
         @@include('html/categoryes.html', {})
         @@include('html/info.html', {})
       </div>
+      @@include('html/contact_form.html', {})
     </main>
     @@include('html/footer.html', {})
     @@include('html/script.html', {})
+    <script>
+      let popup = document.getElementById("popup");
+      let body = document.body;
+
+      function openPopup(){
+        popup.classList.add("open-popup");
+        document.getElementsByTagName('html')[0].style.overflowY = "hidden";
+      }
+
+      function closePopup(){
+        popup.classList.remove("open-popup");
+        document.getElementsByTagName('html')[0].style.overflowY = "visible";
+      }
+    </script>
   </body>
 </html> 

@@ -26,6 +26,10 @@ ScrollTrigger.create({
   pin: true
 })
 
+
+
+
+
 const scrollLink = document.getElementById('scroll-link');
 const scrollElement = document.getElementById('scroll-element');
 

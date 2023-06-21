@@ -1,13 +1,17 @@
-<div class="overlay" id="popup">
+
+<div class="contact_form__overlay" id="popup">
     <div class="contact_form container">
-        <form>
-            <a href="#" onclick="closePopup()" class="contact_form__close">&times;</a>
-            <h3>Связаться с нами</h3>
-            <input type="text" id="fio" placeholder="ФИО" required>
-            <input type="tel" id="phone" placeholder="Телефон" required>
-            <input type="email" id="email" placeholder="Почта" required>
-            <input type="text" id="message" placeholder="Комментарий">
-            <button type="submit" class="button button_accent">
+        <form class="contact_form__form">
+            <a href="#" onclick="closePopup()" class="contact_form__close">&#x2715</a>
+            <!-- <a href="#" onclick="closePopup()" class="contact_form__close">
+                <div class="contact_form__crest"></div>
+            </a> -->
+            <h3 class="contact_form__header">Связаться с нами</h3>
+            <input type="text" id="fio" placeholder="ФИО" class="contact_form__input" required>
+            <input type="tel" id="phone" placeholder="Телефон" class="contact_form__input" required>
+            <input type="email" id="email" placeholder="Почта" class="contact_form__input" required>
+            <input type="text" id="message" class="contact_form__input" placeholder="Комментарий">
+            <button type="submit" class="contact_form__button button_accent button">
                 <span class="accent-button__text">Связаться</span>
                 <div class="accent-button__arrow">
                 @@include('../images/arrow_up.svg')

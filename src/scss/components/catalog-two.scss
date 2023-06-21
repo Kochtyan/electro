@@ -1,0 +1,110 @@
+.catalog-two {
+    background: $black;
+    position: relative;
+    padding: 100px 0;
+    max-height: 180vh;
+    min-width: 100vw;
+    z-index: 4;
+    &__container {
+
+    }
+    &__productname {}
+}
+.container {
+    
+}
+.tabs2 {
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__btn {
+        background-color: rgba(28,28,28,0);
+        padding: 20px 100px;
+        &_active {
+            background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
+            color:#FFFFFF;
+            border: none;
+
+            text-decoration: none;
+
+            
+            position: relative;
+            overflow: hidden;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 30px;
+                height: 100%;
+                transform: skewX(-20deg);
+                opacity: .5;
+                background-color: $white;
+                transition: .3s;
+                animation: gleam 5s linear infinite;
+              }
+        }
+    }
+    &__name {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: $white;
+    }
+    &__content {}
+    
+    &__pane {
+        display: none;
+        &_show {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+        }
+    }
+}
+.product {
+    background: $black;
+    position: relative;
+    padding: 100px 0;
+    max-height: 110vh;
+    min-width: 100vw;
+    z-index: 4;
+    &__container {
+        position: relative;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__image {
+        object-fit: contain;
+        width: 40%;
+    }
+    &__equipment {}
+    &__model {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+    }
+    &__eq {
+        font-weight: 700;
+    }
+    &__description {}
+    &__characteristics {}
+    &__border {
+        border-bottom: 1px solid $white;
+        padding: 10px;
+    }
+    &__chars {}
+}
+.container {
+}
+.button {
+    &_accent {}
+}
+.accent-button {
+    &__text {}
+    &__arrow {}
+}
+

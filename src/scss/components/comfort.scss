@@ -1,0 +1,38 @@
+.comfort {
+    background: $black;
+    position: relative;
+    padding: 100px 0;
+    height: 80vh;
+    min-width: 100vw;
+    z-index: 4;
+    &__container {
+        position: relative;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__image {
+        object-fit: contain;
+        width: 30%;
+        margin-right: 70px;
+        margin-top: -70px;
+    }
+    &__text {
+        color: $white;
+        margin-left: 130px;
+    }
+    &__uppertext {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 38px;
+    }
+    &__subtext {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+.container {
+}

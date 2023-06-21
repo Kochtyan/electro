@@ -12,6 +12,7 @@
   width: fit-content;
   gap: 10px;
   transition: .3s;
+  cursor: pointer;
   &:hover {
     background-color: $gray;  
     color: $white; 

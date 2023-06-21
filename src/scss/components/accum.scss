@@ -1,0 +1,24 @@
+.accum {
+    height: 100vh;
+    min-width: 100vw;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 51.17%, #000000 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/accum_banner.png") no-repeat 50% 50%;
+    background-size: cover;
+    display: flex;
+    align-items: stretch;
+
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 98px;
+        text-align: center;
+    }
+    &__text {}
+}
+.container {
+}
+

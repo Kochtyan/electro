@@ -13,6 +13,10 @@ timeline.from('#category-card__image2', {scale: 0.5, opacity: 0, y: -100}, '<0.2
 timeline.fromTo('.info', {x: '-300vw', y: '100vh'}, {y: '0'});
 timeline.to('.category', {y: '-140vh'}, '<0.1');
 
+/* timeline.fromTo('.comfort', {x: '-100vw', y: '100vh'}, {y: '0'});
+timeline.from('.comfort__image', {scale: 0.5, opacity: 0, rotate: 10}, '<0.2');
+timeline.fromTo('.catalog', {x: '-200vw', y: '100vh'}, {y: '0'});
+timeline.from('#product__image1', {scale: 0.5, opacity: 0, y: -100}, '<0.2'); */
 
 const animBlock = document.querySelector('.anim');
 console.log(animBlock.offsetWidth);
@@ -25,7 +29,6 @@ ScrollTrigger.create({
   scrub: true,
   pin: true
 })
-
 
 
 

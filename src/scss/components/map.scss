@@ -1,0 +1,80 @@
+.map {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 100px 0;
+    height: 100vh;
+    min-width: 100vw;
+    background: $black;
+    &__container {
+        position: relative;
+        margin-top: 50px;
+        z-index: 4;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    &__menu {}
+    &__components {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 460px;
+        height: 800px;
+        padding: 2vw 1.5vw;
+        background: $white;
+    }
+    &__search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    &__input {
+        border: 1px solid $gray;
+        width: 400px;
+        margin: 15px 0;
+        padding: 10px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    &__items {
+        overflow-y: auto;
+        height: 625px;
+    }
+    &__adress {
+        font-weight: 500;
+        color: $black;
+    }
+    &__name {
+        width: 50%;
+        font-size: 16px;
+        font-weight: 500;
+        color: $black;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $black;
+        padding: 10px;
+    }
+    &__back-link {
+        display: flex;
+        justify-content: start;
+        font-weight: 500;
+        font-size: 16px;
+        color: $red;
+        text-decoration: none;
+    }
+    &__subtext {
+        font-weight: 500;
+        font-size: 16px;
+        color: $gray;
+    }
+}
+.container {
+}

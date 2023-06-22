@@ -5,14 +5,10 @@
     max-height: 180vh;
     min-width: 100vw;
     z-index: 4;
-    &__container {
-
-    }
+    &__container {}
     &__productname {}
 }
-.container {
-    
-}
+.container {}
 .tabs {
     &__nav {
         display: flex;
@@ -25,10 +21,7 @@
             background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
             color:#FFFFFF;
             border: none;
-
             text-decoration: none;
-
-            
             position: relative;
             overflow: hidden;
             &::before {
@@ -45,16 +38,8 @@
               }
         }
     }
-    &__name {
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 24px;
-        color: $white;
-    }
-    &__content {
-
-    }
-    
+    &__name {}
+    &__content {}
     &__pane {
         display: none;
         &_show {

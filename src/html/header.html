@@ -1,13 +1,13 @@
 <header class="header">
   <div class="header__container container">
     <div class="header__menu menu">
-      <a href="/"><img src="../images/logo.svg" alt="" class="menu__logo"></a>
+      <a href="/" class="menu__logo-wrapper"><img src="../images/logo.svg" alt="" class="menu__logo"></a>
       <nav class="menu__nav">
         <ul class="menu__list">
-          <li class="menu__item"><a href="#" id="scroll-link" class="menu__link">О бренде</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Ассортимент</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Cервисные центры</a></li>
+          <li class="menu__item"><a href="#about" class="menu__link">О бренде</a></li>
+          <li class="menu__item"><a href="/catalog.html" class="menu__link">Ассортимент</a></li>
+          <li class="menu__item"><a href="/contacts.html" class="menu__link">Контакты</a></li>
+          <li class="menu__item"><a href="/maps.html" class="menu__link">Cервисные центры</a></li>
         </ul>
       </nav>
       <a href="#" onclick="openPopup()" class="menu__button button button_accent">
@@ -16,6 +16,11 @@
           @@include('../images/arrow_up.svg')
         </div>
       </a>
+      <button class="menu__burger burger">
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+        <div class="burger__line"></div>
+      </button>
     </div>
   </div>
 </header>

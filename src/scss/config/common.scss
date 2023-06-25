@@ -67,4 +67,14 @@
   height: 100vh;
 }
 
-
+.burger {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: transparent;
+  &__line {
+    width: 30px;
+    height: 2px;
+    background-color: $red;
+  }
+}

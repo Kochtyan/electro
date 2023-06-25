@@ -1,25 +1,97 @@
 .header {
-  padding: 20px 0;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%);
-  z-index: 2;
+    padding: 20px 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 2;
 }
 
 .menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  &__list {
     display: flex;
-    gap: 35px;
-    list-style: none;
-  }
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 
-  &__link {
-    text-decoration: none;
-  }
+    &__logo {
+        width: 90px;
+    }
+
+    &__list {
+        display: flex;
+        gap: 35px;
+        list-style: none;
+        padding: 0;
+    }
+
+    &__link {
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    &__burger {
+        display: none;
+    }
+
+    &__logo-wrapper {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@include media($laptop) {
+    .header {
+		&__container {}
+		&__menu {}
+    }
+    .menu {
+		&__logo {
+            width: 90px;
+        }
+		&__nav {}
+		&__list {}
+		&__item {}
+		&__link {
+            font-size: 16px;
+        }
+		&__button {}
+    }
+}
+
+@include media($tablet) {
+    .header {
+		&__container {}
+		&__menu {}
+    }
+    .menu {
+		&__logo {}
+		&__nav {
+            display: none;
+        }
+		&__list {}
+		&__item {}
+		&__link {}
+		&__button {
+            display: none;
+        }
+        &__burger {
+            display: flex;
+        }
+    }
+}
+
+@include media($mobile) {
+    .header {
+		&__container {}
+		&__menu {}
+    }
+    .menu {
+		&__logo {}
+		&__nav {}
+		&__list {}
+		&__item {}
+		&__link {}
+		&__button {}
+    }
 }

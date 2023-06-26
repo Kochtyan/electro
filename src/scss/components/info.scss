@@ -9,6 +9,10 @@
         position: relative;
         transition: .3s;
         text-decoration: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
         &::before {
             content: '';
             position: absolute;
@@ -33,6 +37,7 @@
     }
     &__title {
         margin-top: 350px;
+        line-height: 60px;
         position: relative;
     }
     &__button {
@@ -40,9 +45,43 @@
         position: relative;
     }
 }
-.section-title {
+
+
+@include media($laptop) {
+    .info {
+        &__block {
+            &_left {}
+            &_right {}
+        }
+        &__title {}
+        &__button {}
+    }
 }
-.button {
-    &__text {}
-    &__arrow {}
+
+@include media($tablet) {
+    .info {
+        flex-direction: column;
+        &__block {
+            flex: 1 1 auto;
+            padding: 30px;
+            &_left {}
+            &_right {}
+        }
+        &__title {
+            margin-top: 250px;
+            line-height: 30px;
+        }
+        &__button {}
+    }
+}
+
+@include media($mobile) {
+    .info {
+        &__block {
+            &_left {}
+            &_right {}
+        }
+        &__title {}
+        &__button {}
+    }
 }

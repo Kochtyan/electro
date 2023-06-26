@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: $gray;
+  color: $white;
   border: 1px solid $gray;
   padding: 20px 50px;
   font-size: 16px;
@@ -53,6 +53,12 @@
   }
 }
 
+@include media($tablet) {
+  .button {
+    font-size: 13px;
+  }
+}
+
 .section-title {
   font-size: 48px;
   font-weight: 500;
@@ -62,9 +68,24 @@
   }
 }
 
+@include media($tablet) {
+  .section-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+
 .anim {
   display: flex;
   height: 100vh;
+}
+
+@include media($tablet) {
+  .anim {
+    flex-direction: column;
+    height: auto;
+  }
 }
 
 .burger {

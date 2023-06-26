@@ -1,28 +1,25 @@
 .comfort {
     background: $black;
-    position: relative;
-    padding: 100px 0;
-    height: 80vh;
-    min-width: 100vw;
-    z-index: 4;
+    padding-top: 100px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     &__container {
-        position: relative;
-    }
-    &__row {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+    &__image-wrapper {
+        flex: 0 0 490px;
     }
     &__image {
-        object-fit: contain;
-        width: 30%;
-        margin-right: 70px;
-        margin-top: -70px;
+        width: 100%;
+        position: relative;
+        top: -40px;
     }
     &__text {
         color: $white;
-        margin-left: 130px;
+        flex: 0 0 660px;
     }
     &__uppertext {
         font-weight: 500;
@@ -30,11 +27,66 @@
         line-height: 38px;
     }
     &__subtext {
-        font-style: normal;
-        font-weight: 400;
         font-size: 24px;
         line-height: 29px;
+        display: block;
+        margin-top: 50px;
     }
 }
-.container {
+
+@include media($laptop) {
+    .comfort {
+		&__container {}
+		&__image-wrapper {}
+		&__image {}
+		&__text {
+            flex: 1 1 auto;
+        }
+		&__uppertext {}
+		&__subtext {}
+    }
+}
+
+@include media($tablet) {
+    .comfort {
+        padding-top: 50px;
+		&__container {
+            gap: 20px;
+        }
+		&__image-wrapper {
+            flex: 0 0 300px;
+        }
+		&__image {}
+		&__text {
+            
+        }
+		&__uppertext {
+            font-size: 16px;
+            line-height: 20px;
+        }
+		&__subtext {
+            font-size: 13px;
+            line-height: 18px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .comfort {
+		&__container {
+            flex-direction: column;
+            gap: 80px;
+        }
+		&__image-wrapper {
+            width: 70%;
+            flex: 1 1 auto;
+        }
+		&__image {
+            top: 0;
+            bottom: 0;
+        }
+		&__text {}
+		&__uppertext {}
+		&__subtext {}
+    }
 }

@@ -1,97 +1,211 @@
 .catalog {
     background: $black;
-    position: relative;
-    padding: 100px 0;
-    max-height: 180vh;
-    min-width: 100vw;
-    z-index: 4;
+    padding-top: 100px;
     &__container {}
-    &__productname {}
+    &__productname {
+        font-size: 48px;
+        font-weight: 500;
+    }
+    &__tabs {
+        margin-top: 50px;
+    }
 }
-.container {}
 .tabs {
     &__nav {
         display: flex;
-        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
     }
-    &__btn {
+    &__button {
+        flex: 1 1 240px;
+        max-width: 50%;
+        text-align: center;
         background-color: rgba(28,28,28,0);
-        padding: 20px 100px;
-        &_active {
-            background: linear-gradient(96.2deg, #CC2232 9.24%, #AE0213 100%);
-            color:#FFFFFF;
-            border: none;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                width: 30px;
-                height: 100%;
-                transform: skewX(-20deg);
-                opacity: .5;
-                background-color: $white;
-                transition: .3s;
-                animation: gleam 5s linear infinite;
-              }
-        }
+        justify-content: center;
     }
     &__name {}
-    &__content {}
+    &__content {
+        padding: 100px 0;
+    }
     &__pane {
         display: none;
         &_show {
             display: flex;
-            justify-content: center; 
-            align-items: center;
         }
     }
 }
 .product {
     background: $black;
-    position: relative;
-    padding: 100px 0;
-    max-height: 110vh;
-    min-width: 100vw;
-    z-index: 4;
-    &__container {
-        position: relative;
-    }
-    &__row {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 70px;
     &__image {
-        object-fit: contain;
-        width: 40%;
+        width: 100%;
     }
-    &__equipment {}
-    &__model {
+    &__image-wrapper {
+        flex: 0 0 500px;
+    }
+    &__info {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__equipment {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__title {
         font-weight: 700;
         font-size: 36px;
         line-height: 44px;
+        flex: 0 0 100%;
     }
     &__eq {
         font-weight: 700;
     }
     &__description {}
-    &__characteristics {}
+    &__characteristics {
+        flex-basis: 45%;
+        display: flex;
+        flex-direction: column;
+    }
     &__border {
         border-bottom: 1px solid $white;
         padding: 10px;
     }
-    &__chars {}
-}
-.container {
-}
-.button {
-    &_accent {}
-}
-.accent-button {
-    &__text {}
-    &__arrow {}
+    &__chars {
+        display: flex;
+        flex-direction: column;
+    }
+    &__elem {
+        padding: 30px 0;
+        &:not(:first-child) {
+            border-top: 1px solid $white;
+        }
+    }
 }
 
+@include media($laptop) {
+    .catalog {
+		&__container {}
+		&__productname {}
+		&__tabs {}
+    }
+    .tabs {
+		&__nav {}
+		&__button {}
+		&__content {}
+		&__pane {
+			&_show {}
+		}
+    }
+    .product {
+		&__image-wrapper {}
+		&__image {}
+		&__info {}
+		&__title {}
+		&__equipment {}
+		&__eq {}
+		&__description {}
+		&__characteristics {}
+		&__chars {}
+		&__elem {}
+    }
+}
+
+@include media($tablet) {
+    .catalog {
+        padding-top: 50px;
+		&__container {}
+		&__productname {
+            font-size: 24px;
+            line-height: 30px;
+        }
+		&__tabs {}
+    }
+    .tabs {
+		&__nav {
+            gap: 20px;
+        }
+		&__button {
+            padding: 20px;
+            flex-basis: 45%;
+        }
+		&__content {}
+		&__pane {
+			&_show {}
+		}
+    }
+    .product {
+        gap: 40px;
+		&__image-wrapper {
+            flex: 0 0 300px;
+        }
+		&__image {}
+		&__info {}
+		&__title {
+            font-size: 24px;
+        }
+		&__equipment {}
+		&__eq {
+            font-size: 16px;
+        }
+		&__description {
+            font-size: 13px;
+            line-height: 18px;
+        }
+		&__characteristics {}
+		&__chars {}
+		&__elem {
+            font-size: 13px;
+            line-height: 18px;
+        }
+    }
+}
+
+@include media($mobile) {
+    .catalog {
+		&__container {}
+		&__productname {}
+		&__tabs {}
+    }
+    .tabs {
+		&__nav {}
+		&__button {}
+		&__content {}
+		&__pane {
+			&_show {}
+		}
+    }
+    .product {
+        flex-direction: column;
+        align-items: center;
+		&__image-wrapper {}
+		&__image {}
+		&__info {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            width: 100%;
+            gap: 40px;
+        }
+		&__title {
+            flex: 1 1 auto;
+        }
+		&__equipment {}
+		&__eq {}
+		&__description {}
+		&__characteristics {}
+		&__chars {}
+		&__elem {
+            padding: 15px 0;
+        }
+        &__button {
+            margin-top: 40px;
+        }
+    }
+}

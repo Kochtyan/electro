@@ -40,6 +40,31 @@
     }
 }
 
+.mobile-menu {
+    background-color: $white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    &__close {}
+    &__logo-wrapper {}
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__text {
+        color: $black;
+        font-size: 20px;
+        text-decoration: none;
+        &_bold {
+            font-weight: bold;
+        }
+    }
+    &__paragraph {}
+}
+
+
 @include media($laptop) {
     .header {
 		&__container {}

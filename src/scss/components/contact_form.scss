@@ -1,49 +1,67 @@
-.contact_form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.popup {
+    width: 100%;
+    max-width: 540px;
+    height: 100vh;
+    max-height: min-content;
+    overflow-y: auto;
+    
     &__overlay {
-        position: absolute;
+        position: fixed;
         top: 0;
         bottom: 0;
-        left: 50%;
+        left: 0;
         right: 0;
-        transform: translate(-50%, -50%) scale(0.1);
-        transition: transform 0.4s, top 0.4s;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.7);
+        pointer-events: none;
+        opacity: 0;
         visibility: hidden;
-        z-index: 6;
+        transition: .3s;
 
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        &_show {
+            pointer-events: all;
+            opacity: 1;
+            visibility: visible;
+        }
     }
     &__form {
         position: relative;
         display: flex;
         flex-direction: column;
-        width: 90%;
-        max-width: 600px;
-        padding: 2vw 1.5vw;
+        align-items: center;
+        width: 100%;
+        padding: 100px 30px 50px 30px;
         background: $white;
-        opacity: 1;
-        transition: all 400ms;
     }
-    &__header {
+    &__title {
         font-weight: 500;
         font-size: 36px;
         line-height: 43px;
         text-align: center;
         color: $black;
+        margin: 0;
     }
     &__input {
         border: 1px solid $gray;
-        margin: 15px 0;
+        margin-top: 30px;
         padding: 20px;
         font-weight: 500;
         font-size: 20px;
         line-height: 24px;
+        width: 100%;
+        transition: .3s;
+        &_textarea {
+            resize: none;
+        }
+        &:focus {
+            text-indent: 5px;
+        }
     }
     &__button {
-        cursor: pointer;
-        margin: 40px auto;
-        transition: none;
+        margin-top: 55px;
     }
     &__subtext {
         font-weight: 500;
@@ -51,54 +69,116 @@
         line-height: 24px;
         color: $black;
         text-align: center;
+        margin-top: 55px;
+        margin-bottom: 0;
     }
     &__close {
         position: absolute;
         top: 30px;
-        right: 25px;
-        font-size: 45px;
-        text-decoration: none;
-        color: $red;
-    }
-    &__crest {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 24px;
-	    height: 24px;
+        right: 30px;
+        width: 35px;
+        height: 35px;
+
+        background-color: transparent;
         cursor: pointer;
+        padding: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transform-origin: 50% 50%;
+
+            width: 50px;
+            height: 1px;
+            background-color: $red;
+            transition: .3s;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            transform-origin: 50% 50%;
+
+            width: 50px;
+            height: 1px;
+            background-color: $red;
+            transition: .3s;
+        }
+        &:hover {
+            &::after {
+                transform: translate(-50%, -50%) rotate(-135deg);
+            }
+            &::before {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+        }
     }
-    &__crest::before, &__crest::after {
-        content: '';
-        position: absolute;
-        display: block;
-        width: 24px;
-        height: 5px;
-        background: $red;
-    }
-    &__crest::before {
-        transform: rotate(45deg);
-    }
-    
-    &__crest::after {
-        transform: rotate(-45deg);
-    }
-}
-.open-popup {
-    visibility: visible;
-    top: 40%;
-    transform: translate(-50%, -50%) scale(1);
 }
 
-#popup-black {
-    background: #000;
-    height: 100%;
-    opacity: 0.7;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    visibility: hidden;
+@include media($laptop) {
+    .popup {
+		&__overlay {}
+		&__form {}
+		&__close {}
+		&__title {
+            
+        }
+		&__input {
+			&_textarea {}
+		}
+		&__button {}
+		&__subtext {}
+    }
 }
 
+@include media($tablet) {
+    .popup {
+		&__overlay {}
+		&__form {}
+		&__close {}
+		&__title {}
+		&__input {
+			&_textarea {}
+		}
+		&__button {}
+		&__subtext {}
+    }
+}
+
+@include media($mobile) {
+    .popup {
+		&__overlay {}
+		&__form {
+            padding: 50px 30px 100px 30px;
+            min-height: 100vh;
+        }
+		&__close {
+            width: 20px;
+            height: 20px;
+            &::before {
+                width: 30px;
+            }
+            &::after {
+                width: 30px;
+            }
+        }
+		&__title {
+            font-size: 24px;
+        }
+		&__input {
+            font-size: 16px;
+            padding: 10px;
+			&_textarea {}
+		}
+		&__button {
+            margin-top: 20px;
+        }
+		&__subtext {
+            margin-top: 20px;
+        }
+    }
+}

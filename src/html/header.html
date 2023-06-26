@@ -1,26 +1,48 @@
 <header class="header">
-  <div class="header__container container">
-    <div class="header__menu menu">
-      <a href="/" class="menu__logo-wrapper"><img src="../images/logo.svg" alt="" class="menu__logo"></a>
-      <nav class="menu__nav">
-        <ul class="menu__list">
-          <li class="menu__item"><a href="#about" class="menu__link">О бренде</a></li>
-          <li class="menu__item"><a href="/catalog.html" class="menu__link">Ассортимент</a></li>
-          <li class="menu__item"><a href="/contacts.html" class="menu__link">Контакты</a></li>
-          <li class="menu__item"><a href="/maps.html" class="menu__link">Cервисные центры</a></li>
-        </ul>
-      </nav>
-      <a href="#" onclick="openPopup()" class="menu__button button button_accent">
-        <span class="accent-button__text">Связаться</span>
-        <div class="accent-button__arrow">
-          @@include('../images/arrow_up.svg')
+    <div class="header__container container">
+        <div class="header__menu menu">
+        <a href="/" class="menu__logo-wrapper"><img src="../images/logo.svg" alt="" class="menu__logo"></a>
+        <nav class="menu__nav">
+            <ul class="menu__list">
+            <li class="menu__item"><a href="/" class="menu__link">О бренде</a></li>
+            <li class="menu__item"><a href="/catalog.html" class="menu__link">Ассортимент</a></li>
+            <li class="menu__item"><a href="#feedback" class="menu__link">Контакты</a></li>
+            <li class="menu__item"><a href="/maps.html" class="menu__link">Cервисные центры</a></li>
+            </ul>
+        </nav>
+        <a href="#feedback" class="menu__button button button_accent">
+            <span class="accent-button__text">Связаться</span>
+            <div class="accent-button__arrow">
+            @@include('../images/arrow_up.svg')
+            </div>
+        </a>
+        <button class="menu__burger burger">
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+            <div class="burger__line"></div>
+        </button>
         </div>
-      </a>
-      <button class="menu__burger burger">
-        <div class="burger__line"></div>
-        <div class="burger__line"></div>
-        <div class="burger__line"></div>
-      </button>
     </div>
-  </div>
 </header>
+
+<div class="popup__overlay" id="mobile-menu">
+    <div class="mobile-menu popup">
+        <button class="mobile-menu__close popup__close"></button>
+        <div class="mobile-menu__logo-wrapper">
+            @@include('../images/logo.svg')
+        </div>
+        <div class="mobile-menu__nav">
+            <a class="mobile-menu__text" href="/">О бренде</a>
+            <a class="mobile-menu__text" href="/catalog.html">Ассортимент</a>
+            <a class="mobile-menu__text" href="#feedback">Контакты</a>
+            <a class="mobile-menu__text" href="/maps.html">Cервисные центры</a>
+        </div>
+        <p class="mobile-menu__paragraph">
+            <b class="mobile-menu__text mobile-menu__text_bold">Адрес</b><br><br>
+            <span class="mobile-menu__text">
+                г. Москва,<br>
+                Б. Хмельницкого, 125
+            </span>
+        </p>
+    </div>  
+</div>

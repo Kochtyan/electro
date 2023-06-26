@@ -32,3 +32,11 @@ a {
   margin: 0 auto;
   max-width: 1440px;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,8 +1,10 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+import { doc } from "prettier";
 
 function setMainAnimation() {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const timeline = gsap.timeline();
     timeline.fromTo('.about', {x: '-100vw', y: '100vh'}, {y: '0'});
@@ -59,6 +61,37 @@ class Tabs {
     }
 }
 
+class Popup {
+    constructor(root) {
+        this.root = root;
+        this.closeButton = this.root.querySelector('.popup__close');
+        this.overlay = this.root;
+        this.html = document.querySelector('html');
+        this.bindListeners();
+    }
+
+    bindListeners() {
+        this.root.addEventListener('click', (event) => {
+            //Если нажатие на оверлей или на кнопку закрытия
+            if(event.target == this.overlay || event.target == this.closeButton) {
+                event.preventDefault();
+                this.close();
+            }
+        })
+    }
+
+    open() {
+        console.log('open');
+        this.html.classList.add('no-scroll');
+        this.root.classList.add('popup__overlay_show');
+    }
+
+    close() {
+        this.html.classList.remove('no-scroll');
+        this.root.classList.remove('popup__overlay_show');
+    }
+}
+
 function initTabs() {
     const tabs = document.querySelectorAll('.tabs');
     if(tabs.length > 0) {
@@ -68,6 +101,56 @@ function initTabs() {
     }
 }
 
+function initPopup() {
+    //Feedback
+    const popupNode = document.querySelector('#popup');
+    const popup = new Popup(popupNode);
+
+    const popupButtons = document.querySelectorAll('a[href="#feedback"]');
+    if(popupButtons.length > 0) {
+        popupButtons.forEach((button) => {
+            button.addEventListener('click', (event) => {
+                popup.open();
+            })
+        })
+    }
+
+    //Mobile menu
+    const mobileMenuNode = document.querySelector('#mobile-menu');
+    const mobileMenu = new Popup(mobileMenuNode);
+
+
+    const mobileMenuButton = document.querySelector('.menu__burger');
+    if(mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', (event) => {
+            mobileMenu.open();
+        })
+    }
+}
+
+function initMapList() {
+    //Temporary
+    console.log(123);
+    const mapItems = document.querySelector('.map__items');
+    const mapMenu = document.querySelector('.map__menu');
+    const mapDetail = document.querySelector('.map__detail');
+    const mapBack = document.querySelector('.map__back-link');
+    if(mapItems) {
+        mapItems.addEventListener('click', (event) => {
+            mapMenu.classList.add('hidden');
+            mapDetail.classList.remove('hidden');
+        })
+        mapBack.addEventListener('click', (event) => {
+            mapDetail.classList.add('hidden');
+            mapMenu.classList.remove('hidden');
+        })
+    }
+}
+
+/*function scrollToAboutBlock() {
+    console.log(123);
+    gsap.to(window, {duration: 0, scrollTo: "#about"});
+}*/
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const isTablet = document.documentElement.clientWidth < 1100;
@@ -81,80 +164,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     initTabs();
+    initPopup();
+    initMapList();
 })
-
-
-
-
-
-/*
-const scrollLink = document.getElementById('scroll-link');
-const scrollElement = document.getElementById('scroll-element');
-
-  scrollLink.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    const elementTop = scrollElement.getBoundingClientRect().top + window.pageYOffset;
-
-    window.scrollTo({
-      top: elementTop,
-      behavior: 'smooth'
-    });
-  });*/
-/*
-let popup = document.getElementById("popup");
-
-function openPopup(){
-  popup.classList.add("open-popup");
-  document.getElementsByTagName('html')[0].style.overflowY = "hidden";
-  document.getElementById('popup-black').style.visibility = "visible";
-}
-
-function closePopup(){
-  popup.classList.remove("open-popup");
-  document.getElementsByTagName('html')[0].style.overflowY = "visible";
-  document.getElementById('popup-black').style.visibility = "hidden";
-}
-
-function replaceMapComponentsContent() {
-const mapComponents = document.querySelector('.map__components');
-let originalContent = mapComponents.innerHTML;
-mapComponents.innerHTML = `
-<div class="map__components">
-            <a href="#" class="map__back-link restore-button">
-                <div class="map__arrow" style="margin-right: 10px;">
-                  <img src="../images/map_leftarrow.svg" alt="Left arrow">
-                </div>
-                Назад 
-            </a>
-                <div class="map__text">
-                    <p class="map__adress">
-                        Барнаул, ул. Партизанская, д. 203
-                    </p>
-                    <p class="map__name">
-                        ИП Шаперина Любовь Сергеевна
-                    </p>
-                    <p class="map__subtext">
-                        Ежедневно с 10:00 до 20:00
-                    </p>
-                    <a href="tel:89994231973" class="map__back-link">
-                        <div class="map__arrow" style="margin-right: 10px;">
-                          <img src="../images/icon_phone.svg" alt="Left arrow">
-                        </div>
-                        8-999-423‒19-73
-                    </a>
-                </div>
-        </div>
-`;
-document.querySelector('.restore-button').addEventListener('click', function(event) {
-event.preventDefault();
-mapComponents.innerHTML = originalContent;
-});
-}
-
-const link = document.querySelector('.map__link');
-link.addEventListener('click', (event) => {
-event.preventDefault();
-replaceMapComponentsContent();
-});
-*/

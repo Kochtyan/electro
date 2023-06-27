@@ -10,11 +10,12 @@ function setMainAnimation() {
     timeline.fromTo('.about', {x: '-100vw', y: '100vh'}, {y: '0'});
     timeline.from('.about__image', {scale: 0.5, opacity: 0, rotate: 10}, '<0.2');
     timeline.fromTo('.category', {x: '-200vw', y: '100vh'}, {y: '0'});
-    timeline.from('#category-card__image1', {scale: 0.5, opacity: 0, y: -100}, '<0.2');
-    timeline.fromTo('.category', {x: '-200vw', y: '0', backgroundColor: 'white'}, {y: '-100vh', backgroundColor: 'black'}, '>0.2');
-    timeline.from('#category-card__image2', {scale: 0.5, opacity: 0, y: -100}, '<0.2');
-    timeline.fromTo('.info', {x: '-300vw', y: '100vh'}, {y: '0'});
-    timeline.to('.category', {y: '-140vh'}, '<0.1');
+    timeline.from('#category-card__image1', {scale: 0.5, opacity: 0, y: -100}, '<');
+    timeline.fromTo('.category', {x: '-200vw', y: '0', backgroundColor: 'white'}, {y: '-100vh', backgroundColor: 'black'}, '>0.1');
+    timeline.from('#category-card__image2', {scale: 0.5, opacity: 0, y: -100}, '<');
+    timeline.fromTo('.info', {x: '-300vw', y: '100vh', ease: 'none'}, {y: '60vh', ease: 'none'}, '<');
+    timeline.fromTo('.info', {x: '-300vw', y: '60vh', ease: 'none'}, {y: '0', ease: 'none'});
+    timeline.fromTo('.category', {y: '-100vh', ease: 'none'}, {y: '-165vh', ease: 'none'}, '<');
 
     const animBlock = document.querySelector('.anim');
     console.log(animBlock.offsetWidth);
@@ -23,7 +24,7 @@ function setMainAnimation() {
         animation: timeline,
         trigger: '.anim',
         start: 'top top',
-        end: 6000,
+        end: 4000,
         scrub: true,
         pin: true
     })
